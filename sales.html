@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales - Star Computers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .accordion {
+            background-color: #1a73e8;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .accordion::after {
+            content: '\25BC';
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active::after {
+            content: "\25B2";
+        }
+
+        .panel {
+            padding: 15px;
+            display: none;
+            background-color: #f3f3f3;
+            overflow: hidden;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .panel img {
+            width: 120px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SALES - STAR COMPUTERS</h1>
+    <p>Laptops | Monitors | Cameras | Printers | Accessories</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="sales.html">Sales</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+    <h2>Our Products & Brands</h2>
+
+    <!-- Laptops Section -->
+    <button class="accordion">Laptops</button>
+    <div class="panel">
+        <h3>Brands:</h3>
+        <img src="images/acer.jpg" alt="Acer">
+        <img src="images/asus.jpg" alt="Asus">
+        <img src="images/hp.jpg" alt="HP">
+        <img src="images/dell.jpg" alt="Dell">
+        <img src="images/lenovo.jpg" alt="Lenovo">
+    </div>
+
+    <!-- Monitors Section -->
+    <button class="accordion">Monitors</button>
+    <div class="panel">
+        <h3>Brands:</h3>
+        <img src="images/acer_monitor.jpg" alt="Acer Monitor">
+        <img src="images/asus_monitor.jpg" alt="Asus Monitor">
+        <img src="images/hp_monitor.jpg" alt="HP Monitor">
+        <img src="images/dell_monitor.jpg" alt="Dell Monitor">
+        <img src="images/lenovo_monitor.jpg" alt="Lenovo Monitor">
+    </div>
+
+    <!-- Cameras Section -->
+    <button class="accordion">Cameras</button>
+    <div class="panel">
+        <h3>Brands:</h3>
+        <img src="images/hikvision.jpg" alt="Hikvision">
+        <img src="images/tplink.jpg" alt="TP-Link">
+        <img src="images/cpplus.jpg" alt="CP Plus">
+    </div>
+
+    <!-- Printers Section -->
+    <button class="accordion">Printers</button>
+    <div class="panel">
+        <h3>Brands:</h3>
+        <img src="images/epson.jpg" alt="Epson">
+        <img src="images/canon.jpg" alt="Canon">
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 Star Computers.</p>
+</footer>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

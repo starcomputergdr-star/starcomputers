@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales - Star Computers</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .accordion {
+            width: 80%;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+
+        .acc-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .acc-item:hover {
+            background: #f5f5f5;
+        }
+
+        .acc-content {
+            display: none;
+            padding: 15px;
+        }
+
+        .brand-images {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .brand-images img {
+            width: 150px;
+            height: 120px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .arrow {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function toggleAccordion(id) {
+            let content = document.getElementById(id);
+            let arrow = document.getElementById("arrow-" + id);
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.innerHTML = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.innerHTML = "▲";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Star Computers - Sales</h1>
+    </header>
+
+    <div class="accordion">
+
+        <!-- Laptop Brands -->
+        <div class="acc-item" onclick="toggleAccordion('laptops')">
+            Laptop Brands
+            <span class="arrow" id="arrow-laptops">▼</span>
+        </div>
+        <div class="acc-content" id="laptops">
+            <div class="brand-images">
+                <img src="images/acer.png" alt="Acer">
+                <img src="images/asus.png" alt="Asus">
+                <img src="images/hp.png" alt="HP">
+                <img src="images/dell.png" alt="Dell">
+                <img src="images/lenovo.png" alt="Lenovo">
+            </div>
+        </div>
+
+        <!-- Monitors -->
+        <div class="acc-item" onclick="toggleAccordion('monitors')">
+            Monitor / Desktop Brands
+            <span class="arrow" id="arrow-monitors">▼</span>
+        </div>
+        <div class="acc-content" id="monitors">
+            <div class="brand-images">
+                <img src="images/acer.png" alt="Acer Monitor">
+                <img src="images/asus.png" alt="Asus Monitor">
+                <img src="images/hp.png" alt="HP Monitor">
+                <img src="images/dell.png" alt="Dell Monitor">
+                <img src="images/lenovo.png" alt="Lenovo Monitor">
+            </div>
+        </div>
+
+        <!-- Cameras -->
+        <div class="acc-item" onclick="toggleAccordion('cameras')">
+            CCTV Camera Brands
+            <span class="arrow" id="arrow-cameras">▼</span>
+        </div>
+        <div class="acc-content" id="cameras">
+            <div class="brand-images">
+                <img src="images/hikvision.png" alt="Hikvision">
+                <img src="images/tplink.png" alt="TP Link">
+                <img src="images/cpplus.png" alt="CP Plus">
+            </div>
+        </div>
+
+        <!-- Printers -->
+        <div class="acc-item" onclick="toggleAccordion('printers')">
+            Printer Brands
+            <span class="arrow" id="arrow-printers">▼</span>
+        </div>
+        <div class="acc-content" id="printers">
+            <div class="brand-images">
+                <img src="images/epson.png" alt="Epson">
+                <img src="images/canon.png" alt="Canon">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
